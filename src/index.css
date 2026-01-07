@@ -1,0 +1,28 @@
+/* ========== LIGHT THEME (DEFAULT) ========== */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #0f172a;
+  --card-bg: #ffffff;
+  --section-bg: #f8fafc;
+  --border-color: #e5e7eb;
+  --primary-color: #2563eb;
+}
+
+/* ========== DARK THEME ========== */
+[data-theme="dark"] {
+  --bg-color: #020617;
+  --text-color: #e5e7eb;
+  --card-bg: #0f172a;
+  --section-bg: #020617;
+  --border-color: #334155;
+  --primary-color: #38bdf8;
+}
+
+/* ========== GLOBAL APPLY ========== */
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Inter", system-ui, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}

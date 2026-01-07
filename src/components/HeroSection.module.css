@@ -1,0 +1,145 @@
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 8%;
+
+  /* 🔥 Animated Gradient */
+  background: linear-gradient(
+    -45deg,
+    #0f172a,
+    #1e293b,
+    #2563eb,
+    #0ea5e9
+  );
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+
+  color: white;
+  overflow: hidden;
+}
+/* Left */
+.left {
+  max-width: 550px;
+}
+
+.left h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
+  line-height: 1.2;
+  /* color: #0f172a; */
+}
+
+.left h1 span {
+  color: #ef4444;
+}
+
+.badges {
+  display: flex;
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.badges span {
+  background: #e0e7ff;
+  color: #1e3a8a;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.left p {
+  color: #e2e8f0;
+  margin-bottom: 25px;
+  font-size: 16px;
+}
+
+.buttons {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.primary {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.secondary {
+  background: transparent;
+  color: #c0c0c0;
+  border: 1px solid #2563eb;
+  padding: 12px 22px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.primary:hover {
+  background: #1d4ed8;
+}
+
+.secondary:hover {
+  background: #2563eb;
+  color: white;
+}
+
+.left small {
+  color: #64748b;
+}
+
+/* Right */
+.right img {
+  width: 100%;
+  max-width: 650px;
+  border-radius: 20px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none; /* 🔥 important */
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .badges {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .right img {
+    width: 90%;
+  }
+}
+/* 🔄 Animation */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

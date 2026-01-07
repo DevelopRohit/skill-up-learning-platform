@@ -1,0 +1,109 @@
+.section {
+  padding: 100px 8%;
+  background: linear-gradient(180deg, #ffffff, #f1f5f9);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 70px;
+}
+
+.header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.header p {
+  margin-top: 12px;
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* Grid */
+.grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* Card */
+.card {
+  background: white;
+  padding: 35px 28px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.15);
+}
+
+.icon {
+  font-size: 42px;
+  margin-bottom: 18px;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #0f172a;
+}
+
+.card p {
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* CTA */
+.cta {
+  margin-top: 80px;
+  padding: 50px 40px;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  border-radius: 22px;
+  text-align: center;
+  color: white;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta h3 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.cta button {
+  padding: 14px 30px;
+  background: white;
+  color: #2563eb;
+  border: none;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cta button:hover {
+  background: #e0e7ff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header h2 {
+    font-size: 28px;
+  }
+
+  .cta h3 {
+    font-size: 22px;
+  }
+}

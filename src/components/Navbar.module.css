@@ -1,0 +1,202 @@
+/* ================= NAVBAR ================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  padding: 14px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.92);
+  transition: box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.scrolled {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ================= LEFT ================= */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1.45rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.logo span {
+  color: #2563eb;
+}
+
+/* ================= LINKS ================= */
+.links {
+  list-style: none;
+  display: flex;
+  gap: 26px;
+  margin: 0;
+  padding: 0;
+}
+
+.links a {
+  position: relative;
+  text-decoration: none;
+  color: #0f172a;
+  font-weight: 500;
+  padding-bottom: 4px;
+}
+
+.links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #2563eb;
+  transition: width 0.3s ease;
+}
+
+.links a:hover::after,
+.links a.active::after {
+  width: 100%;
+}
+
+/* ================= SEARCH ================= */
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  background: #f1f5f9;
+  border-radius: 4px;
+  padding: 6px 8px;
+  width: clamp(220px, 25vw, 360px);
+
+  transition: box-shadow 0.3s ease;
+}
+
+.searchBox:focus-within {
+  box-shadow: 0 0 0 2px #2563eb;
+}
+
+.userName {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.searchBox input {
+  border: none;
+  outline: none;
+
+  background: transparent;
+  padding: 6px 10px;
+  width: 100%;
+  font-size: 0.9rem;
+  color: #0f172a;
+}
+
+.searchBox input::placeholder {
+  color: #94a3b8;
+}
+
+.searchBtn {
+  border: none;
+  background: transparent;
+  color: #000000;
+  width: 40px;
+  height: 36px;
+  border-radius:50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.searchBtn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.45);
+}
+
+/* ================= RIGHT ================= */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* .icon {
+  font-size: 1.05rem;
+  cursor: pointer;
+  color: #0f172a;
+} */
+
+/* ================= BUTTONS ================= */
+.signin {
+  background: #8296c3;
+  color: #ffffff;
+  border: none;
+  width: 150px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  width: 150px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+/* ================= USER ================= */
+.userBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit:cover ;
+  border: 2px solid#2563eb;
+}
+
+.userBox span {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.logout {
+  border: none;
+  background: transparent;
+  color: #ef4444;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+
