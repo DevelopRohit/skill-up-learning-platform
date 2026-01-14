@@ -81,20 +81,29 @@
 }
 
 /* RESPONSIVE */
+.courseTop {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
 @media (max-width: 900px) {
-  .hero {
+  .courseTop {
     flex-direction: column;
+    gap: 24px;
   }
 
-  .left h1 {
-    font-size: 28px;
-  }
-  
-}
-
-@media (max-width: 900px) {
-  .enroll {
-    width: fit-content;
+  .courseTop img {
+    width: 100%;
   }
 }
 
+@media (max-width: 480px) {
+  .courseTop h1 {
+    font-size: 1.6rem;
+  }
+
+  .courseTop p {
+    font-size: 0.95rem;
+  }
+}

@@ -1,12 +1,26 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
+import { useState } from "react";
+
 // import { LayoutContext } from "../context/LayoutContext";
+import { FaSearch } from "react-icons/fa";
+
 
 import styles from "./HeroSection.module.css";
 
 const HeroSection = ({ openLogin }) => {
   const navigate = useNavigate();
+    const [search, setSearch] = useState("");
+
+
+    
+  const handleSearch = () => {
+    if (!search.trim()) return;
+    navigate(`/search?q=${search}`);
+    setSearch("");
+  };
+
 
   return (
     <section className={styles.hero}>
@@ -17,11 +31,25 @@ const HeroSection = ({ openLogin }) => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >
+
+
         <h1>
           Tech skills that go beyond <br />
           certifications,
           <span> Learn without limits.</span>
         </h1>
+
+              <div className={styles.searchBox}>
+        <input
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+          placeholder="Search skills..."
+        />
+        <button onClick={handleSearch} className={styles.searchBtn}>
+          <FaSearch />
+        </button>
+      </div>
 
         <div className={styles.badges}>
           <span>🚀 Job-ready skills</span>

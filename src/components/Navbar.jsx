@@ -1,41 +1,58 @@
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { FaSearch } from "react-icons/fa";
+// import { FaSearch } from "react-icons/fa";
 import styles from "./Navbar.module.css";
 import { useAuth } from "../context/AuthContext";
+import { FaBars, FaTimes } from "react-icons/fa";
+
 
 const Navbar = ({ openLogin }) => {
-  const [search, setSearch] = useState("");
+  // const [search, setSearch] = useState("");
   const navigate = useNavigate();
   const { user, logout } = useAuth();
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  const handleSearch = () => {
-    if (!search.trim()) return;
-    navigate(`/search?q=${search}`);
-    setSearch("");
-  };
+
+  // const handleSearch = () => {
+  //   if (!search.trim()) return;
+  //   navigate(`/search?q=${search}`);
+  //   setSearch("");
+  // };
 
   return (
     <nav className={styles.navbar}>
       {/* LEFT */}
-      <div className={styles.left}>
-        <div
-          className={styles.logo}
-          onClick={() => navigate("/")}
-          style={{ cursor: "pointer" }}
-        >
-          📘 <span>SKILL-UP</span>
-        </div>
+<div className={styles.left}>
+  <div
+    className={styles.logo}
+    onClick={() => navigate("/")}
+  >
+    📘 <span>SKILL-UP</span>
+  </div>
 
-        <ul className={styles.links}>
-          <li><NavLink to="/" end>Home</NavLink></li>
-          <li><NavLink to="/courses">Courses</NavLink></li>
-          <li><NavLink to="/about">About</NavLink></li>
-        </ul>
-      </div>
+  {/* MENU BUTTON (MOBILE) */}
+  <button
+    className={styles.menuBtn}
+    onClick={() => setMenuOpen(!menuOpen)}
+  >
+    {menuOpen ? <FaTimes /> : <FaBars />}
+  </button>
 
+  {/* LINKS → MENU BUTTON KE ANDAR */}
+  <ul className={`${styles.links} ${menuOpen ? styles.active : ""}`}>
+    <li onClick={() => setMenuOpen(false)}>
+      <NavLink to="/" end>Home</NavLink>
+    </li>
+    <li onClick={() => setMenuOpen(false)}>
+      <NavLink to="/courses">Courses</NavLink>
+    </li>
+    <li onClick={() => setMenuOpen(false)}>
+      <NavLink to="/about">About</NavLink>
+    </li>
+  </ul>
+</div>
       {/* SEARCH */}
-      <div className={styles.searchBox}>
+      {/* <div className={styles.searchBox}>
         <input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -46,7 +63,7 @@ const Navbar = ({ openLogin }) => {
           <FaSearch />
         </button>
       </div>
-
+ */}
       {/* RIGHT */}
       <div className={styles.right}>
         {!user ? (

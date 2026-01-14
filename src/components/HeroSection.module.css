@@ -111,6 +111,12 @@
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+  .hero {
+    padding: 70px 6%;
+  }
+}
+
 @media (max-width: 900px) {
   .hero {
     flex-direction: column;
@@ -118,28 +124,90 @@
     gap: 40px;
   }
 
-  .badges {
-    justify-content: center;
-    flex-wrap: wrap;
+  .hero h1 {
+    font-size: 2.2rem;
   }
 
   .buttons {
     justify-content: center;
   }
+}
 
-  .right img {
-    width: 90%;
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
   }
 }
-/* 🔄 Animation */
-@keyframes gradientMove {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+
+/* ================= SEARCH ================= */
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f1f5f9;
+  border-radius: 4px;
+  padding: 6px 8px;
+  width: clamp(220px, 25vw, 360px);
+
+  transition: box-shadow 0.3s ease;
 }
+
+.searchBox:focus-within {
+  box-shadow: 0 0 0 2px #2563eb;
+}
+
+.userName {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.searchBox input {
+  border: none;
+  outline: none;
+
+  background: transparent;
+  padding: 6px 10px;
+  width: 100%;
+  font-size: 0.9rem;
+  color: #0f172a;
+}
+
+.searchBox input::placeholder {
+  color: #94a3b8;
+}
+
+.searchBtn {
+  border: none;
+  background: blue;
+  color: #000000;
+  width: 40px;
+  height: 36px;
+  border-radius:50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.searchBtn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.45);
+}
+
+/* ================= RIGHT ================= */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* .icon {
+  font-size: 1.05rem;
+  cursor: pointer;
+  color: #0f172a;
+} */

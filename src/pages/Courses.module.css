@@ -95,3 +95,26 @@
   background: linear-gradient(135deg, #1d4ed8, #4338ca);
   transform: translateY(-2px);
 }
+
+
+.coursesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .courseCard {
+    padding: 18px;
+  }
+
+  .courseCard h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .coursesGrid {
+    grid-template-columns: 1fr;
+  }
+}
