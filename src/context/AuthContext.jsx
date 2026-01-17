@@ -8,18 +8,16 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-useEffect(() => {
-  const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-    console.log("AUTH USER FULL OBJECT:", currentUser);
-    console.log("EMAIL:", currentUser?.email);
-    console.log("PROVIDER DATA:", currentUser?.providerData);
 
-    setUser(currentUser);
-    setLoading(false);
-  });
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      console.log("AUTH STATE:", currentUser);
+      setUser(currentUser);
+      setLoading(false);
+    });
 
-  return () => unsubscribe();
-}, []);
+    return () => unsubscribe();
+  }, []);
 
   const logout = async () => {
     await signOut(auth);

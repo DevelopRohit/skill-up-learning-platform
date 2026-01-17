@@ -6,19 +6,15 @@ import { auth } from "../firebase";
 import styles from "./AuthModal.module.css";
 
 const provider = new GoogleAuthProvider();
-provider.addScope("email");
-provider.addScope("profile");
-provider.setCustomParameters({
-  prompt: "select_account",
-});
+
 const AuthModal = ({ close }) => {
   const googleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
       console.log("LOGIN SUCCESS:", result.user);
-      close(); // ✅ NOW SAFE
-    } catch (err) {
-      console.error("Google Login Error:", err);
+      close(); // ✅ login ke baad modal close
+    } catch (error) {
+      console.error("Google Login Error:", error);
     }
   };
 
