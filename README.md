@@ -1,3 +1,37 @@
+# 🚀 Skill-Up – Online Learning Platform
+
+A modern online learning platform built using **React.js** and **Firebase**.
+
+---
+
+## 🌐 Live Website
+👉 **https://skill-up-feecf.web.app**
+
+---
+
+## ✨ Features
+- Google Authentication (Firebase)
+- Technical & Non-Technical Courses
+- Course Details with Video Content
+- Responsive UI
+- Firebase Firestore Backend
+- Secure Hosting on Firebase
+
+---
+
+## 🛠 Tech Stack
+- React.js
+- Firebase Authentication
+- Firebase Firestore
+- Firebase Hosting
+- CSS Modules
+
+---
+
+## 📦 Installation
+```bash
+npm install
+npm run dev
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
